@@ -9,6 +9,7 @@ npm install
 
 ### Run
 ```shell
+mongod
 node app.js
 ```
 localhost:3000
