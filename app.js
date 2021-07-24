@@ -33,11 +33,11 @@ app.post("/", function(req,res){
 
 	const jsonData = JSON.stringify(data);
 
-	const url = <INSERT MAILCHIMP API URL>;
+	const url = <INSERT MAILCHIMP API URL>; // should put in ENV
 
 	const options = {
 		method: "POST",
-		auth: "KK:5ee16b80682c7db05e89d7388141482b-us6"
+		auth: <INSERT MAILCHIMP API AUTH> // should put in ENV
 	}
 
 	const request = https.request(url, options, function(response){
@@ -69,11 +69,6 @@ app.post("/failure", function(req,res){
 app.listen(process.env.PORT || 3000, function(){ //process.env.PORT heroku
 	console.log("started listening on port 3000");
 })
-
-// mailchimp api key
-// 5ee16b80682c7db05e89d7388141482b-us6
-// list
-// 4b477a0ad6
 
 // ISSUE: ctrl+c doesnt stop running express server on hyperjs
 // https://stackoverflow.com/questions/44788982/node-js-ctrl-c-doesnt-stop-server-after-starting-server-with-npm-start
